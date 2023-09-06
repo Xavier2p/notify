@@ -4,11 +4,11 @@
 
 ## Routes
 
-+ `POST` - `/` - Send a message to the general channel
 + `GET` - `/` - Get the current general message
-+ `POST` - `/<channel>` - Send a message to a specific channel
 + `GET` - `/<channel>` - Get the current message in the channel
 + `GET` - `/health` - Get the health of the service
++ `POST` - `/` - Send a message to the general channel
++ `POST` - `/<channel>` - Send a message to a specific channel
 
 ## Message Format
 
