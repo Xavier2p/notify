@@ -1,0 +1,3 @@
+(function() {var implementors = {
+"notifier":[["impl&lt;'de&gt; <a class=\"trait\" href=\"https://docs.rs/serde/1.0.188/serde/de/trait.Deserialize.html\" title=\"trait serde::de::Deserialize\">Deserialize</a>&lt;'de&gt; for <a class=\"struct\" href=\"notifier/message/struct.Message.html\" title=\"struct notifier::message::Message\">Message</a>"]]
+};if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

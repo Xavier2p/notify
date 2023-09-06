@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["retrieve_message","store_message"]};
