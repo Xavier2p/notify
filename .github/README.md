@@ -12,7 +12,7 @@
 
 ## Message Format
 
-```json
+```jsonc
 {
   "message": "Hello World!",
   "title": "Hello",
