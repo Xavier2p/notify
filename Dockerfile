@@ -1,18 +1,8 @@
-# FROM alpine:latest
-# RUN apk add --no-cache rust cargo
-# WORKDIR /app
-# COPY . .
-# RUN cargo build --release
-# ENTRYPOINT ["./target/release/notifier"]
-
-FROM alpine:latest AS builder
-RUN apk add --no-cache rust cargo
+FROM messense/rust-musl-cross:aarch64-musl as builder
 WORKDIR /app
 COPY . .
-RUN cargo build --release
+RUN cargo build --release --target aarch64-unknown-linux-musl
 
-FROM alpine:latest
-RUN apk add --no-cache ca-certificates
-WORKDIR /app
-COPY --from=builder /app/target/release/ /app
-CMD ["./notifier"]
+FROM scratch
+COPY --from=builder /app/target/aarch64-unknown-linux-musl/release/notifier /notifier
+ENTRYPOINT ["/notifier"]
