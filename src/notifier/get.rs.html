@@ -23,23 +23,55 @@
 <a href="#23" id="23">23</a>
 <a href="#24" id="24">24</a>
 <a href="#25" id="25">25</a>
+<a href="#26" id="26">26</a>
+<a href="#27" id="27">27</a>
+<a href="#28" id="28">28</a>
+<a href="#29" id="29">29</a>
+<a href="#30" id="30">30</a>
+<a href="#31" id="31">31</a>
+<a href="#32" id="32">32</a>
+<a href="#33" id="33">33</a>
+<a href="#34" id="34">34</a>
+<a href="#35" id="35">35</a>
+<a href="#36" id="36">36</a>
+<a href="#37" id="37">37</a>
+<a href="#38" id="38">38</a>
+<a href="#39" id="39">39</a>
+<a href="#40" id="40">40</a>
+<a href="#41" id="41">41</a>
 </pre></div><pre class="rust"><code><span class="doccomment">//! This module contains the GET routes for the API.
+//!
+//! The routes are:
+//! - `/` - The general channel.
+//! - `/&lt;channel&gt;` - Any specified channel.
+//! - `/health` - The health check.
+//!
+//! The routes are all asynchronous and return a `Result&lt;Json&lt;Message&gt;, http::Status&gt;`.
 </span><span class="kw">use crate</span>::{helpers, message::Message};
 <span class="kw">use </span>rocket::{http, serde::json::Json};
 
 <span class="doccomment">/// This route is for the general channel.
+///
+/// The general channel is the default channel.
+/// This route is the same as `/general`.
 </span><span class="attr">#[get(<span class="string">&quot;/&quot;</span>)]
 </span><span class="kw">pub async fn </span>general() -&gt; <span class="prelude-ty">Result</span>&lt;Json&lt;Message&gt;, http::Status&gt; {
     helpers::retrieve_message(<span class="string">&quot;general&quot;</span>)
 }
 
 <span class="doccomment">/// This route is for any specified channel.
+///
+/// The channel is specified in the URL.
+/// If a channel does not exist, a `404` error is returned.
 </span><span class="attr">#[get(<span class="string">&quot;/&lt;channel&gt;&quot;</span>)]
 </span><span class="kw">pub async fn </span>channel(channel: String) -&gt; <span class="prelude-ty">Result</span>&lt;Json&lt;Message&gt;, http::Status&gt; {
     helpers::retrieve_message(<span class="kw-2">&amp;</span>channel)
 }
 
 <span class="doccomment">/// This route is for the health check.
+///
+/// The health check is used to check if the API is up and running.
+/// It returns a `200` status code if everything is good.
 </span><span class="attr">#[get(<span class="string">&quot;/health&quot;</span>)]
 </span><span class="kw">pub async fn </span>health() -&gt; Json&lt;Message&gt; {
     Message::new(
