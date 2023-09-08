@@ -595,12 +595,11 @@ dependencies = [
 
 [[package]]
 name = "notifier"
-version = "0.1.0"
+version = "1.0.1"
 dependencies = [
  "rocket",
  "serde",
  "serde_json",
- "tokio",
 ]
 
 [[package]]
@@ -1163,7 +1162,6 @@ dependencies = [
  "libc",
  "mio",
  "num_cpus",
- "parking_lot",
  "pin-project-lite",
  "signal-hook-registry",
  "socket2 0.5.3",
