@@ -1,3 +1,3 @@
 (function() {var implementors = {
-"notifier":[["impl <a class=\"trait\" href=\"https://doc.rust-lang.org/1.75.0/core/marker/trait.Freeze.html\" title=\"trait core::marker::Freeze\">Freeze</a> for <a class=\"struct\" href=\"notifier/message/struct.Message.html\" title=\"struct notifier::message::Message\">Message</a>",1,["notifier::message::Message"]]]
+"notifier":[["impl <a class=\"trait\" href=\"https://doc.rust-lang.org/1.76.0/core/marker/trait.Freeze.html\" title=\"trait core::marker::Freeze\">Freeze</a> for <a class=\"struct\" href=\"notifier/message/struct.Message.html\" title=\"struct notifier::message::Message\">Message</a>",1,["notifier::message::Message"]]]
 };if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()
